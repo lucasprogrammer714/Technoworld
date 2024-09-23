@@ -121,12 +121,9 @@ function validateForm(nameProduct, description, stock, price, code, category) {
     return true;
 }
 
-/*let closeModalStocktbtn = document.getElementById('close_modal_stock');
-closeModaltbtn.addEventListener("click", clearMessage)
-*/
 
 
-newProductbtn.addEventListener("click", AddNewProduct)
+
 
 function clearInputField() {
     document.getElementById('formProducts').reset();
