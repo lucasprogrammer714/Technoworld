@@ -1,0 +1,44 @@
+
+/*.body{
+    background: linear-gradient(176deg, rgba(37,150,190,1) 0%, rgba(82,98,115,1) 82%);
+    background-color: #5cb85c;
+}*/
+
+.modal-body {
+    overflow-x: auto; 
+    max-height: 400px; 
+    overflow-y: auto;  
+}
+
+.table {
+    table-layout: auto;
+    width: 100%; 
+    margin-bottom: 0; 
+}
+
+.product-f-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.error-message{
+    color:red;
+    margin-right: 10px;
+    padding: 10px;
+    
+}
+.success-message{
+    color:#5cb85c;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+
+.stock-c-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}

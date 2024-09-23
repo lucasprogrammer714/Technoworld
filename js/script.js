@@ -1,90 +1,215 @@
-let userName = prompt("Ingrese su Nombre")
-let lastName = prompt("Ingrese su Apellido")
-console.log("Bienvenido a Technoworld " + userName + " " + lastName)
-
-const productos = []
-
-let confirmProduct = confirm("¿Desea agregar algun producto?")
-
-
-if (confirmProduct) {
-    newProduct()
-}
-
-
-function newProduct() {
-    let addProduct = true;
-    
-    while(addProduct){
-        const id = prompt("Ingrese el ID del producto")
-        const nameProduct = prompt("Ingrese nombre de producto")
-        const price = prompt("Ingrese precio de producto")
-        const stock = prompt("Ingrese stock")
-    
-        const producto = { id, nameProduct, price, stock }
-    
-        productos.push(producto)
-    
-        let showProduct = confirm("¿Desea ver la lista de productos")
-        if (showProduct) {
-            showProducts(productos)
-        }
-        else{
-            addProduct = false
-        }
-            
-        let updateProduct = confirm("¿Desea actualizar algun producto?")
-        if (updateProduct) UpdateProduct(productos)
-    }
-   
-
-    
-}
-
-
-function showProducts(productos) {
-    for (const producto of productos) {
-        console.log(producto)
+class Product {
+    constructor(nameProduct, description, stock, price, code, category) {
+        this.nameProduct = nameProduct;
+        this.description = description;
+        this.stock = stock;
+        this.price = price;
+        this.code = code;
+        this.category = category;
     }
 }
 
 
-function UpdateProduct(productos) {
-    const id = prompt("Ingrese Id de producto")
-    const productIndex = productos.findIndex(product => product.id === id)
+loadTable();
+
+let productsJson = localStorage.getItem("products");
+let products = productsJson ? JSON.parse(productsJson) : [];
+
+if (!productsJson) {
+    let product1 = new Product("SmartWatch Xiaomi", "reloj inteligente", 5, 150.000, "FF34", "SmartWatch");
+    let product2 = new Product("SAMSUNG A52", "celular azul", 4, 250.000, "FF35", "Celulares");
+    let product3 = new Product("Motorola Edge", "celular rojo", 3, 300.000, "FF36", "Celulares");
+    let product4 = new Product("Samsung TV", "tv smart", 7, 350.000, "FF37", "TV");
+    let product5 = new Product("SmartWatch RedNet", "reloj inteligente", 5, 150.000, "FF38", "SmartWatch");
+
+    let listaProductosPredeterminada = [product1, product2, product3, product4, product5];
+    
+    listaProductosPredeterminada.forEach(product => products.push(product));
+    
+    const productsJson = JSON.stringify(products);
+    localStorage.setItem("products", productsJson);
+}
 
 
-    if (productIndex !== -1) {
 
-        let productItem = prompt("Eliga item: N-Nombre / S-Stock / P-Precio")
+let newProductbtn = document.getElementById('newProduct_btn');
+let updateStockbtn = document.getElementById('updateStock_btn');
+let closeModaltbtn = document.getElementById('close_modal');
+let closeModalStock = document.getElementById('close_modal_stock');
 
-        switch (productItem) {
-            case 'N':
-                const nameProduct = prompt("Ingrese nuevo nombre de producto");
-                productos[productIndex].nameProduct = nameProduct;
-                break
-            case 'S':
-                const stock = prompt("Ingrese nuevo stock");
-                productos[productIndex].stock = stock;
-                break
-            case 'P':
-                const price = prompt("Ingrese nuevo precio");
-                productos[productIndex].price = price;
-                break
-            default:
-                alert("item invalido")
-        }
 
-        showNewProducts(productos)
-    }
-    else {
-        alert("producto no existe en la lista")
-    }
+
+
+newProductbtn.addEventListener("click", AddNewProduct)
+updateStockbtn.addEventListener("click", updateStock)
+closeModaltbtn.addEventListener("click", clearMessage)
+closeModalStock.addEventListener("click", clearMessage)
+
+
+
+
+
+function AddNewProduct() {
+
+    const nameProduct = document.getElementById('nameProduct').value;
+    const description = document.getElementById('description').value;
+    const stock = document.getElementById('stock').value;
+    const price = document.getElementById('price').value;
+    const code = document.getElementById('code').value;
+    const selectElement = document.getElementById("category");
+
+    const category = selectElement.value;
+
+     let validate = validateForm(nameProduct, description, stock, price, code, category)
+
+     if(validate){
+
+        const newProduct = new Product(nameProduct, description, stock, price, code, category);
+
+        let productsJson = localStorage.getItem("products");
+        let products = productsJson ? JSON.parse(productsJson) : [];
+
+        products.push(newProduct);
+
+        const updatedProductsJson = JSON.stringify(products);
+        localStorage.setItem("products", updatedProductsJson);
+
+        clearInputField(); 
+        
+        loadTable();
+
+     }
 
 }
 
-function showNewProducts(productos) {
-    for (const producto of productos) {
-        console.log(producto)
+function validateForm(nameProduct, description, stock, price, code, category) {
+    let messageError = document.getElementById('errorMessage');
+
+    if (nameProduct === '') {
+        messageError.innerText = "El nombre del producto es obligatorio";
+        return false;
+    }        
+
+    if (description === '') {
+        messageError.innerText = "La descripcion es obligatoria" ;
+        return false;
+
+    }
+    if (stock === '') {
+        messageError.innerText = "Stock es obligatorio";
+        return false;
+
+    }
+    if (price === '') {
+        messageError.innerText = "Precio es obligatorio";
+        return false;
+
+    }
+    if (code === '') {
+        messageError.innerText = "Codigo es obligatorio";
+        return false;
+
+    }
+    if (category === '') {
+        messageError.innerText = "Categoria es obligatorio";
+        return false;
+    }
+
+    messageError.style.color = '#5cb85c';
+    messageError.innerText = "Producto guardado exitosamente" ;
+
+    return true;
+}
+
+/*let closeModalStocktbtn = document.getElementById('close_modal_stock');
+closeModaltbtn.addEventListener("click", clearMessage)
+*/
+
+
+newProductbtn.addEventListener("click", AddNewProduct)
+
+function clearInputField() {
+    document.getElementById('formProducts').reset();
+    document.getElementById('formUpdateStock').reset();
+
+}
+
+function clearMessage() {
+    let messageError = document.getElementById('errorMessage');
+    messageError.innerText = "";
+
+    let validateMessage = document.getElementById('validateCodeMessage');
+    validateMessage.innerText = ' ';
+}
+
+
+
+
+function loadTable() {
+    let tableProducts = document.querySelector(".table");
+
+    tableProducts.querySelectorAll("tbody").forEach(tbody => tbody.remove());
+
+    let productsJson = localStorage.getItem("products");
+
+
+   if (productsJson) {
+        let products = JSON.parse(productsJson);
+
+        products.forEach((product, index) => {
+            console.log(product);
+            let tableBody = document.createElement("tbody");
+
+            tableBody.innerHTML = `
+            <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${product.nameProduct}</td>
+            <td>${product.description}</td>
+            <td>${product.stock}</td>
+            <td>${product.price}</td>
+            <td>${product.code}</td>
+            <td>${product.category}</td>
+            </tr>  
+            `;
+            tableProducts.append(tableBody);
+        });
+ } else {
+   console.log("No hay productos en el localStorage.");
     }
 }
+
+function updateStock() {
+    let newStock = document.getElementById('newStock').value;
+    let productCode = document.getElementById('codeProduct').value;
+    let validateMessage = document.getElementById('validateCodeMessage');
+    let productsJson = localStorage.getItem("products");
+    
+    if (productsJson) {
+      let products = JSON.parse(productsJson);
+      
+      const productUpdated = products.find((product) => product.code === productCode);
+      
+      if (productUpdated) {
+        productUpdated.stock = newStock;
+        
+        localStorage.setItem("products", JSON.stringify(products));
+        
+                
+        loadTable();
+
+        validateMessage.style.color = '#5cb85c';
+        validateMessage.innerText = 'Stock actualizado correctamente.'
+
+        clearInputField()
+ 
+
+      } else {
+        validateMessage.innerText = 'Producto no encontrado.'
+      }
+    } else {
+        validateMessage.innerText = 'No hay productos en el stock.'
+
+    }
+
+  }
+  

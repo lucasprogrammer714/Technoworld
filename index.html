@@ -1,20 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechnoWorld</title>
-   <script src="./js/script.js"></script>
 
-   <h1>TechnoWorld</h1>
- <p>TechnoWorld, una aplicacion para productos de tecnologia (celulares, consolas, tv, etc) </p>
- <p>Contara ademas con dos roles de usuario. Administrador y Usuario.
-    Administrador podra quitar o agregar stock, cambiar precios.
-    Mientras que usuario comun podra ver el listado de productos y sumarlos a su carrito de compras
- </p>
-
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-    
+
+
+    <h1>TechnoWorld</h1>
+    <p>Explora todas las tecnologias </p>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Categoria</th>
+            </tr>
+        </thead>
+    </table>
+
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formProductModal"> Agregar
+        producto</button>
+    <button type="button" id="showProducts_btn" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#modalStock"> Actualizar stock</button>
+
+    <div class="modal fade" id="formProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Producto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProducts">
+                        <div class="product-f-container"> <label for="nameProduct">Nombre de Producto:</label>
+                            <input id="nameProduct" type="text" />
+                        </div>
+                        <div class="product-f-container"> <label for="description">Descripcion:</label>
+                            <input id="description" type="text" />
+                        </div>
+                        <div class="product-f-container"> <label for="stock">Stock:</label>
+                            <input id="stock" type="text" />
+                        </div>
+                        <div class="product-f-container">
+                            <label for="price">Precio:</label>
+                            <input id="price" type="text" />
+                        </div>
+                        <div class="product-f-container"> <label for="code">Codigo:</label>
+                            <input id="code" type="text" />
+                        </div>
+                        <div class="product-f-container">
+                            <label for="category">Categoria:</label>
+                            <select id="category">
+                                <option value="PC/Notebooks">PC/Notebooks</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="Celulares">Celulares</option>
+                                <option value="TV">TV</option>
+                                <option value="SmartWatchs">SmartWatchs</option>
+                                <option value="Accesorios">Accesorios</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span id="errorMessage" class="error-message"></span>
+                    <button id="close_modal" type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cerrar</button>
+                    <button id="newProduct_btn" type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modalStock" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Stock</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formUpdateStock">
+                        <div class="stock-c-container">
+
+                            <label for="searchProduct">Buscar codigo de producto a actualizar: </label>
+                            <input id="codeProduct" type="text">
+                        </div>
+                        <div class="stock-c-container"> <label for="selectStockOption">Seleccione razon de cambio de
+                                stock: </label>
+                            <select>
+                                <option value="rotura">Rotura</option>
+                                <option value="venta">Venta</option>
+                                <option value="ajusteStock">Ajuste de Stock</option>
+                            </select>
+                        </div>
+                        <div class="stock-c-container"> <label for="newStock">Nuevo stock: </label>
+                            <input id="newStock" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span id="validateCodeMessage" class="error-message"></span>
+                    <button id="close_modal_stock" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="updateStock_btn" type="button" class="btn btn-secondary">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
