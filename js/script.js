@@ -146,23 +146,24 @@ function clearMessage() {
 
 
 document.getElementById('sortPriceDesc').addEventListener('click', function() {
-  loadTable(false); 
+  loadTable('price', false); 
 });
 
 document.getElementById('sortPriceAsc').addEventListener('click', function() {
-  loadTable(true); 
+  loadTable('price', true); 
 });
 
-document.getElementById('sortPriceDesc').addEventListener('click', function() {
-  loadTable(false); 
+document.getElementById('sortStockDesc').addEventListener('click', function() {
+  loadTable('stock', false);
 });
 
-document.getElementById('sortPriceAsc').addEventListener('click', function() {
-  loadTable(true); 
+document.getElementById('sortStockAsc').addEventListener('click', function() {
+  loadTable('stock', true); 
 });
 
 
-function loadTable(ascending) {
+function loadTable(sortBy, ascending) {
+
 
   let tableProducts = document.querySelector(".table");
 
@@ -173,7 +174,14 @@ function loadTable(ascending) {
   if (productsJson) {
     let products = JSON.parse(productsJson);
 
-    products.sort((a, b) => ascending ? a.price - b.price : b.price - a.price);
+    products.sort((a, b) => {
+      if (sortBy === 'price') {
+        return ascending ? a.price - b.price : b.price - a.price;
+      } else if (sortBy === 'stock') {
+        return ascending ? a.stock - b.stock : b.stock - a.stock;
+      }
+    });
+
 
     products.forEach((product, index) => {
       let tableBody = document.createElement("tbody");
