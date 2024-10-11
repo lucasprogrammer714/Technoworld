@@ -1,0 +1,18 @@
+{
+    "productos": [
+      {
+        "codigo": "FF35",
+        "nombre": "SAMSUNG A52",
+        "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de Galaxy A52. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
+        "Proveedor": "SAMSUNG",
+        "Identificador": "FF"
+      },
+      {
+        "codigo": "FF36",
+        "nombre": "Motorola Edge",
+        "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de Galaxy A52. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
+        "Proveedor": "MOTOROLA",
+        "Identificador": "FF"
+      }
+    ]
+  }
