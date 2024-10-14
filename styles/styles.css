@@ -4,6 +4,17 @@
     background-color: #5cb85c;
 }*/
 
+
+body{
+    background-color: #D0E2E5;
+}
+
+header{
+    background-color:#A9BAC3;
+}
+ footer{
+    background-color:#A9BAC3;
+ }
 .modal-body {
     overflow-x: auto; 
     max-height: 400px; 
@@ -42,3 +53,51 @@
     gap: 10px;
     margin-bottom: 10px;
 }
+
+.img-tarjeta {
+    width: 250px;
+    height: auto;
+  }
+
+
+
+.size-logo{
+    width: 50px;
+}
+
+.buttons-main{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    padding: 15px;
+}
+
+td {
+    text-align: center;
+}
+

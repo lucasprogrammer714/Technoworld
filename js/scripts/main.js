@@ -15,20 +15,21 @@ let productsJson = localStorage.getItem("products");
 let products = productsJson ? JSON.parse(productsJson) : [];
 
 function loadDefaultProducts() {
-  let product1 = new Product("SmartWatch Xiaomi", "reloj inteligente", 5, 150.000, "FF34", "SmartWatchs");
-  let product2 = new Product("SAMSUNG A52", "celular azul", 4, 250.000, "FF35", "Celulares");
-  let product3 = new Product("Motorola Edge", "celular rojo", 3, 300.000, "FF36", "Celulares");
-  let product4 = new Product("Samsung TV", "tv smart", 7, 350.000, "FF37", "TV");
-  let product5 = new Product("SmartWatch RedNet", "reloj inteligente", 5, 150.000, "FF38", "SmartWatchs");
+  let product1 = new Product("SmartWatch Xiaomi", "reloj inteligente", 5, 150000, "FF34", "SmartWatchs");
+  let product2 = new Product("SAMSUNG A52", "celular azul", 4, 250000, "FF35", "Celulares");
+  let product3 = new Product("Motorola Edge", "celular rojo", 3, 300000, "FF36", "Celulares");
+  let product4 = new Product("Samsung TV", "tv smart", 7, 350000, "FF37", "TV");
+  let product5 = new Product("SmartWatch RedNet", "reloj inteligente", 5, 150000, "FF38", "SmartWatchs");
 
-  let productsJson = localStorage.getItem("products");
   if (!productsJson || products.length === 0) {
-    products = loadDefaultProducts();
-    localStorage.setItem("products", JSON.stringify(products));
+    products = [product1, product2, product3, product4, product5];
+    localStorage.setItem("products", JSON.stringify(products)); 
   }
 
-  return [product1, product2, product3, product4, product5];
+  return products;
 }
+
+products = loadDefaultProducts();
 
 
 loadTable();
@@ -75,6 +76,12 @@ function AddNewProduct() {
 
     loadTable();
 
+    Swal.fire({
+      title: "Excelente!",
+      text: "Se ha guardado el producto correctamente!",
+      icon: "success"
+    });
+
   }
 
 }
@@ -119,8 +126,7 @@ function validateForm(nameProduct, description, stock, price, code, category) {
     return false;
   }
 
-  messageError.style.color = '#5cb85c';
-  messageError.innerText = "Producto guardado exitosamente";
+
 
   return true;
 }
@@ -207,7 +213,25 @@ function loadTable(sortBy, ascending) {
     `;
 
       tableBody.querySelector(".btn-delete").addEventListener("click", function () {
-        deleteProduct(product.code);
+        Swal.fire({
+          title: "¿Esta seguro?",
+          text: "¿Desea eliminar este producto?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si",
+          cancelButtonText: "Cancelar"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            deleteProduct(product.code);
+            Swal.fire({
+              title: "Eliminado!",
+              text: "El producto fue eliminado.",
+              icon: "success"
+            });
+          }
+        });
       });
 
       tableBody.querySelector(".btn-update").addEventListener("click", function () {
@@ -273,6 +297,8 @@ function loadProductToForm(productCode) {
       document.getElementById('newDescription').value = product.description;
       document.getElementById('newPrice').value = product.price;
       document.getElementById('newCategory').value = product.category;
+      document.getElementById('newcode').value = product.code;
+
     }
   }
 }
@@ -289,6 +315,7 @@ function updateProduct(productCode) {
   let newDescription = document.getElementById('newDescription').value;
   let newPrice = document.getElementById('newPrice').value;
   let newCategory = document.getElementById('newCategory').value;
+  let newCode = document.getElementById('newcode').value;
 
   let validateMessage = document.getElementById('validateCodeMessage');
   let productsJson = localStorage.getItem("products");
@@ -300,18 +327,30 @@ function updateProduct(productCode) {
 
 
     if (productUpdated) {
-      productUpdated.nameProduct = newName;
-      productUpdated.description = newDescription;
-      productUpdated.price = newPrice;
-      productUpdated.category = newCategory;
-      productUpdated.stock = newStock;
 
-      localStorage.setItem("products", JSON.stringify(products));
-      loadTable();
+      let validate = validateForm(newName, newDescription, newStock, newPrice, newCode, newCategory)
+console.log("validame");
+      if(validate){
+        console.log("validameHecho");
 
-      validateMessage.style.color = '#5cb85c';
-      validateMessage.innerText = 'Producto actualizado correctamente.';
-
+        productUpdated.nameProduct = newName;
+        productUpdated.description = newDescription;
+        productUpdated.price = newPrice;
+        productUpdated.category = newCategory;
+        productUpdated.stock = newStock;
+        productUpdated.code = newCode;
+  
+        localStorage.setItem("products", JSON.stringify(products));
+        loadTable();
+  
+        Swal.fire({
+          title: "Excelente!",
+          text: "Se ha actualizado el producto correctamente!",
+          icon: "success"
+        });
+  
+      }
+  
     } else {
       validateMessage.innerText = 'Producto no encontrado.';
     }
@@ -319,6 +358,47 @@ function updateProduct(productCode) {
     validateMessage.innerText = 'No hay productos en el stock.';
   }
 }
+
+
+setInterval(function(){
+  lowStockAlert();
+  console.log("entree")
+}, 10000);
+
+function lowStockAlert() {
+  const minStock = 3;
+  let productsJson = localStorage.getItem("products");
+
+  if (productsJson) {
+    let products = JSON.parse(productsJson);
+    let productosBajoStock = [];
+
+    products.forEach(element => {
+      if (element.stock < minStock) {
+        productosBajoStock.push(`
+          <li>
+            <strong>${element.nameProduct}</strong> (Código: ${element.code}) - Stock: ${element.stock}
+          </li>
+        `);
+      }
+    });
+
+    if (productosBajoStock.length > 0) {
+      Swal.fire({
+        title: "<strong>Alerta: Productos con stock bajo</strong>",
+        icon: "info",
+        html: `
+          Los siguientes productos tienen un stock bajo, se recomienda reponer:
+          <ul>
+            ${productosBajoStock.join('')}
+          </ul>
+        `,
+      });
+    }
+  }
+}
+
+
 
 function deleteProduct(code) {
 
