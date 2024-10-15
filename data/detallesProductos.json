@@ -1,7 +1,7 @@
 {
     "productos": [
       {
-        "codigo": "FF35",
+        "codigo": "SP35",
         "nombre": "Samsung Galaxy A52",
         "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de <strong>Galaxy A52</strong>. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
         "Proveedor": "SAMSUNG",
@@ -9,7 +9,7 @@
         "RutaImagen":"../assets/img/smartphones/samsung-a52.jpg"
       },
       {
-        "codigo": "FF36",
+        "codigo": "SP36",
         "nombre": "Motorola Razr 50 Ultra",
         "detalle": "Descubre la elegancia en cada pliegue con el <strong>Motorola Razr 50 Ultra</strong>. Su pantalla flexible y diseño compacto lo hacen el dispositivo perfecto para quienes buscan estilo y funcionalidad en un solo lugar.",
         "Proveedor": "MOTOROLA",
@@ -18,7 +18,7 @@
         
       },
       {
-        "codigo": "FF35",
+        "codigo": "SP37",
         "nombre": "Motorola E 14",
         "detalle": "Disfrutá de tus películas y programas favoritos en la pantalla ultra wide y brillante de 6.6 y 90 Hz* con sonido Dolby Atmos®. Hacé varias tareas con facilidad gracias a que contás con hasta 4GB de memoria RAM con RAM Boost.",
         "Proveedor": "MOTOROLA",
@@ -26,7 +26,7 @@
         "RutaImagen":"../assets/img/smartphones/motorola-e-14.jpg"
       },
       {
-        "codigo": "FF36",
+        "codigo": "SP38",
         "nombre": "Samsung Galaxy S24+",
         "detalle": "Son las mejoras que estabas esperando. Más pantalla. Más batería. Más potencia de procesamiento.8 Hay mucho más que adorar de los <strong>Galaxy S24</strong> y <strong>S24+</strong>.  Especialmente ahora que el Galaxy S24+ viene con la mayor resolución de pantalla.",
         "Proveedor": "SAMSUNG",
@@ -35,7 +35,7 @@
         
       },
       {
-        "codigo": "FF35",
+        "codigo": "SP39",
         "nombre": "Samsung Galaxy Z Flip5",
         "detalle": "El <strong>Galaxy Z Flip5</strong> presenta por primera vez a Flex Window de 3,4 pulgadas creado para la autoexpresión.6 Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
         "Proveedor": "SAMSUNG",
@@ -43,45 +43,101 @@
         "RutaImagen":"../assets/img/smartphones/samsung-z-flip.jpg"
       },
       {
-        "codigo": "FF36",
+        "codigo": "SP40",
         "nombre": "Xiaomi Note 11",
         "detalle": "Fotografía profesional en tu bolsilloDescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
-        "Proveedor": "MOTOROLA",
+        "Proveedor": "Xiaomi",
         "Identificador": "SP",
         "RutaImagen":"../assets/img/smartphones/xiaomi-note-11.png"
         
       },
       {
-        "codigo": "GG45",
+        "codigo": "GM45",
         "nombre": "XBOX Series S",
         "detalle": "Pásate a lo digital con la Xbox Series S y crea una biblioteca de juegos digitales. Tus juegos, partidas guardadas y copias de seguridad están a salvo en la nube. Además, disfruta de la capacidad de reservar y preinstalar los juegos próximos.",
-        "Proveedor": "MOTOROLA",
+        "Proveedor": "MICROSOFT",
         "Identificador": "GM",
         "RutaImagen":"../assets/img/gaming/x-series-s.jpg"
       },
       {
-        "codigo": "GG45",
+        "codigo": "GM46",
         "nombre": "Playstation 5",
         "detalle": " Disfruta de tiempos de carga superveloces con un SSD de velocidad ultrarrápida, una experiencia más inmersiva gracias a la compatibilidad con respuesta háptica1, y de toda una increíble colección de juegos.",
-        "Proveedor": "MOTOROLA",
+        "Proveedor": "SONY",
         "Identificador": "GM",
         "RutaImagen":"../assets/img/gaming/ps5.jpg"
       },
       {
-        "codigo": "GG45",
+        "codigo": "GM47",
         "nombre": "XBOX Series S (Black)",
         "detalle": "Disfruta de una velocidad y rendimiento de nueva generación con Xbox Series S en negro carbón, con un SSD de 1 TB. Mundos más dinámicos, tiempos de carga más rápidos y la adición de Xbox Game Pass, Series S totalmente digital ofrece gran rendimiento",
-        "Proveedor": "MOTOROLA",
+        "Proveedor": "MICROSOFT",
         "Identificador": "GM",
         "RutaImagen":"../assets/img/gaming/series-s-1tb.jpg"
       },
       {
-        "codigo": "GG45",
+        "codigo": "GM48",
         "nombre": "XBOX Series X",
         "detalle": "Aprovecha al máximo cada minuto de tus juegos con Quick Resume, tiempos de carga ultrarrápidos y una jugabilidad de hasta 120 FPS... todo ello con la tecnología Xbox Velocity Architecture.",
-        "Proveedor": "MOTOROLA",
+        "Proveedor": "MICROSOFT",
         "Identificador": "GM",
         "RutaImagen":"../assets/img/gaming/series-x.jpg"
+      },
+      {
+        "codigo": "TV01",
+        "nombre": "TV LED 32” Philips",
+        "detalle": "El motor de procesamiento del televisor LED Philips optimiza la calidad de la imagen para ofrecer imágenes nítidas, colores enriquecidos y movimiento fluido. Obtendrá la mejor experiencia de visualización posible en todo momento.",
+        "Proveedor": "Philips",
+        "Identificador": "TV",
+        "RutaImagen":"../assets/img/tv/philips-tv.jpg"
+      },
+      {
+        "codigo": "TV02",
+        "nombre": "Smart Tv Samsung 50 Uhd4K",
+        "detalle": " Experimentá un mundo de colores vibrantes y calidad de imagen excepcional con la <strong>Smart TV Samsung 50 UHD 4K</strong>. Su pantalla UHD de 50 pulgadas (3840x2160 píxeles) ofrece detalles cautivadores, mientras la tecnología PurColor da vida a las imágenes.",
+        "Proveedor": "SAMSUNG",
+        "Identificador": "TV",
+        "RutaImagen":"../assets/img/tv/samsung-tv.jpg"
+      },
+      {
+        "codigo": "TV03",
+        "nombre": "Smart TV LG UHD 4K",
+        "detalle": "Revela hasta el último detalle <strong>LG UHD TV</strong> con HDR10 Pro ofrece niveles de brillo optimizados para colores vivos y detalles notables. El procesador α5 AI 4K Gen6 mejora el televisor LG UHD para brindarte una experiencia inmersiva.",
+        "Proveedor": "SAMSUNG",
+        "Identificador": "TV",
+        "RutaImagen":"../assets/img/tv/lg-tv.jpg"
+      },
+      {
+        "codigo": "PN15",
+        "nombre": "Notebook N14X1010 Noblex",
+        "detalle": "La Notebook N14X1010 Noblex es una herramienta confiable y eficiente diseñada para usuarios que buscan una combinación de portabilidad, rendimiento y accesibilidad. Con su procesador Intel Celeron N4020C y 4GB de memoria, esta laptop maneja tareas cotidianas como navegación web, edición de documentos y reproducción de multimedia con fluidez.",
+        "Proveedor": "NOBLEX",
+        "Identificador": "PN",
+        "RutaImagen":"../assets/img/pc-notebooks/note-noblex.jpg"
+      },
+      {
+        "codigo": "PN32",
+        "nombre": "Notebook HP 15,6” AMD Ryzen",
+        "detalle": "Creada para mantenerte productivo y conectado, la notebook HP 15-EF2513LA posee un diseño delgado y liviano para que la lleves con vos a todos lados. Cuenta con una pantalla HD (1366 x 768) de 15,6 pulgadas con microbordes que te permitirá tener una experiencia multimedia inmersiva.",
+        "Proveedor": "HP",
+        "Identificador": "PN",
+        "RutaImagen":"../assets/img/pc-notebooks/note-hp.jpg"
+      },
+      {
+        "codigo": "SW15",
+        "nombre": "Smartwatch DT4",
+        "detalle": "Con la función multi-deportes, encontrarás el entrenamiento ideal para vos. Establecé objetivos diarios y creá programas personalizados. Registrá tus calorías quemadas, cronometrá y medí distancias recorridas. Podrás intercambiar entre más de 200 fondos de pantalla y crear propios con tus imágenes preferidas.",
+        "Proveedor": "DTN",
+        "Identificador": "SW",
+        "RutaImagen":"../assets/img/smart-watch/smart-watch2.jpg"
+      },
+      {
+        "codigo": "SW32",
+        "nombre": "Smartwatch Xiaomi Redmi Watch",
+        "detalle": "¡Descubre la revolución en tecnología con el Redmi Watch 4! Este reloj inteligente combina estilo y funcionalidad para ofrecerte una experiencia única. Monitoriza tus pasos, distancia recorrida, calorías quemadas y más para mantenerte en forma.",
+        "Proveedor": "Xiaomi",
+        "Identificador": "SW",
+        "RutaImagen":"../assets/img/smart-watch/smart-watch1.jpg"
       }
     ]
   }

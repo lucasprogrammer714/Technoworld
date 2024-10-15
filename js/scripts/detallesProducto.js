@@ -16,9 +16,6 @@ document.getElementById('tv').addEventListener('click', function () {
 document.getElementById('smartwatchs').addEventListener('click', function () {
   mostrarProductoPorCodigo('SW');
 });
-document.getElementById('accesorios').addEventListener('click', function () {
-  mostrarProductoPorCodigo('AC');
-});
 
 
 

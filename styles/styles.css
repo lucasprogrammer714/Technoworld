@@ -124,6 +124,7 @@ header{
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .sort-btn{
@@ -180,3 +181,9 @@ td {
     text-align: center;
 }
 
+.div-volver{
+   display: flex;
+   justify-content: flex-end;
+   margin-right: 100px;
+   margin-bottom: 50px;
+}

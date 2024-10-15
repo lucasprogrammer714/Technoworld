@@ -79,7 +79,10 @@ function AddNewProduct() {
     Swal.fire({
       title: "Excelente!",
       text: "Se ha guardado el producto correctamente!",
-      icon: "success"
+      icon: "success",
+      iconColor: "#2596be",
+      confirmButtonColor: "#2596be"
+
     });
 
   }
@@ -217,9 +220,10 @@ function loadTable(sortBy, ascending) {
           title: "¿Esta seguro?",
           text: "¿Desea eliminar este producto?",
           icon: "warning",
+          iconColor: "#2596be",
           showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
+          confirmButtonColor: "#2596be",
+          cancelButtonColor: "#2596be",
           confirmButtonText: "Si",
           cancelButtonText: "Cancelar"
         }).then((result) => {
@@ -228,7 +232,9 @@ function loadTable(sortBy, ascending) {
             Swal.fire({
               title: "Eliminado!",
               text: "El producto fue eliminado.",
-              icon: "success"
+              icon: "success",
+              iconColor: "#2596be",
+              confirmButtonColor: "#2596be"
             });
           }
         });
@@ -346,7 +352,10 @@ console.log("validame");
         Swal.fire({
           title: "Excelente!",
           text: "Se ha actualizado el producto correctamente!",
-          icon: "success"
+          icon: "success",
+          iconColor: "#2596be",
+          confirmButtonColor: "#2596be"
+
         });
   
       }
