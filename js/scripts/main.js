@@ -149,7 +149,7 @@ function clearMessage() {
   messageError.innerText = "";
 
   let validateMessage = document.getElementById('validateCodeMessage');
-  validateMessage.innerText = ' ';
+  validateMessage.innerText = " ";
 }
 
 
@@ -293,8 +293,6 @@ function loadProductToForm(productCode) {
   if (productsJson) {
     let products = JSON.parse(productsJson);
     let product = products.find(p => p.code === productCode);
-    console.log("Este es el codigo de producto", productCode)
-    console.log("Este es EL producto", product)
 
 
     if (product) {
@@ -335,9 +333,8 @@ function updateProduct(productCode) {
     if (productUpdated) {
 
       let validate = validateForm(newName, newDescription, newStock, newPrice, newCode, newCategory)
-console.log("validame");
+
       if(validate){
-        console.log("validameHecho");
 
         productUpdated.nameProduct = newName;
         productUpdated.description = newDescription;
@@ -371,7 +368,7 @@ console.log("validame");
 
 setInterval(function(){
   lowStockAlert();
-  console.log("entree")
+
 }, 10000);
 
 function lowStockAlert() {

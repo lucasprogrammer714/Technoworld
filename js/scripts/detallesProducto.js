@@ -20,8 +20,6 @@ document.getElementById('smartwatchs').addEventListener('click', function () {
 
 
 
-
-
 function crearCardProducto(producto) {
   return `
       <div class="col-md-4">
@@ -41,7 +39,6 @@ function mostrarProductoPorCodigo(identificador) {
   fetch('../data/detallesProductos.json')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       let productosFiltrados = data.productos.filter(producto => producto.Identificador === identificador);
       let cardsProducts = '';
 
