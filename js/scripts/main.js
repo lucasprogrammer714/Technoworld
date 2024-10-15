@@ -15,14 +15,27 @@ let productsJson = localStorage.getItem("products");
 let products = productsJson ? JSON.parse(productsJson) : [];
 
 function loadDefaultProducts() {
-  let product1 = new Product("SmartWatch Xiaomi", "reloj inteligente", 5, 150000, "FF34", "SmartWatchs");
-  let product2 = new Product("SAMSUNG A52", "celular azul", 4, 250000, "FF35", "Celulares");
-  let product3 = new Product("Motorola Edge", "celular rojo", 3, 300000, "FF36", "Celulares");
-  let product4 = new Product("Samsung TV", "tv smart", 7, 350000, "FF37", "TV");
-  let product5 = new Product("SmartWatch RedNet", "reloj inteligente", 5, 150000, "FF38", "SmartWatchs");
+  let product1 = new Product("SAMSUNG Galaxy A52", "Smartphone 6.5\" Super AMOLED, Cámara 64 MP, 6 GB RAM", 8, 250000, "SP35", "Celulares");
+  let product2 = new Product("Motorola Razr 50 Ultra", "Smartphone plegable, Pantalla OLED 6.7\" desplegada", 5, 250000, "SP36", "Celulares");
+  let product3 = new Product("Motorola E 14", "Smartphone 6.5\" IPS LCD, Cámara 13 MP, 3 GB RAM", 9, 350000, "SP37", "Celulares");
+  let product4 = new Product("Samsung Galaxy S24+", "Smartphone 6.7\" Dynamic AMOLED, Cámara 108 MP, 12 GB RAM", 8, 850000, "SP38", "Celulares");
+  let product5 = new Product("Samsung Galaxy Z Flip5", "Smartphone plegable, Pantalla AMOLED 6.7\"", 4, 850000, "SP39", "Celulares");
+  let product6 = new Product("Xiaomi Note 11", "Smartphone 6.43\" AMOLED, Cámara 50 MP, 4 GB RAM", 6, 125666, "SP40", "Celulares");
+  let product7 = new Product("Xbox Series S", "Consola de videojuegos, AMD Zen 2, 512 GB SSD", 4, 120000, "GM45", "Gaming");
+  let product8 = new Product("Playstation 5", "Consola de videojuegos, AMD Ryzen Zen 2, 825 GB SSD", 4, 250000, "GM46", "Gaming");
+  let product9 = new Product("Xbox Series S (Black)", "Consola de videojuegos, AMD Zen 2, 512 GB SSD", 4, 210000, "GM47", "Gaming");
+  let product10 = new Product("Xbox Series X", "Consola de videojuegos, AMD Zen 2, 1 TB SSD", 4, 250000, "GM48", "Gaming");
+  let product11 = new Product("TV LED 32\" Philips", "Televisor LED, 32\" HD, HDMI, USB", 6, 2300000, "TV01", "TV");
+  let product12 = new Product("Smart TV Samsung 50\" UHD 4K", "Smart TV, 50\" 4K UHD, HDMI, USB, Wi-Fi", 7, 2560000, "TV02", "TV");
+  let product13 = new Product("Smart TV LG UHD 4K", "Smart TV, 55\" 4K UHD, HDMI, USB, Wi-Fi", 9, 1580000, "TV03", "TV");
+  let product14 = new Product("Notebook N14X1010 Noblex", "Laptop 14\", Intel Celeron, 4 GB RAM, 128 GB SSD", 12, 1257000, "PN15", "PC/Notebooks");
+  let product15 = new Product("Notebook HP 15.6\" AMD Ryzen", "Laptop 15.6\", AMD Ryzen 5, 8 GB RAM, 512 GB SSD", 6, 1259000, "PN32", "PC/Notebooks");
+  let product16 = new Product("Smartwatch DT4", "Smartwatch, Pantalla 1.78\" AMOLED, Bluetooth", 15, 899000, "SW15", "SmartWatchs");
+  let product17 = new Product("Smartwatch Xiaomi Redmi Watch", "Smartwatch, Pantalla 1.4\" TFT, Bluetooth", 17, 786000, "SW32", "SmartWatchs");
+  
 
   if (!productsJson || products.length === 0) {
-    products = [product1, product2, product3, product4, product5];
+    products = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17];
     localStorage.setItem("products", JSON.stringify(products)); 
   }
 
