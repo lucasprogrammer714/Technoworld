@@ -6,19 +6,57 @@
 
 
 body{
-    background-color: #D0E2E5;
+    background: rgb(222,229,236);
+    background: linear-gradient(176deg, rgba(222,229,236,1) 100%, rgba(37,150,190,1) 100%);
+}
+
+h1{
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header{
-    background-color:#A9BAC3;
+    background: rgb(37,150,190);
+    background: linear-gradient(176deg, rgba(37,150,190,1) 14%, rgba(222,229,236,1) 55%);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: larger;
 }
+
+
+
  footer{
-    background-color:#A9BAC3;
- }
+    background: rgb(222,229,236);
+    background: linear-gradient(176deg, rgba(222,229,236,1) 82%, rgba(37,150,190,1) 83%); 
+}
 .modal-body {
     overflow-x: auto; 
     max-height: 400px; 
     overflow-y: auto;  
+}
+
+
+
+.play-regular {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .play-bold {
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+  .table-container {
+    padding: 30px;
 }
 
 .table {
@@ -27,6 +65,8 @@ header{
     margin-bottom: 0; 
 }
 
+
+
 .product-f-container{
     display: flex;
     flex-direction: column;
@@ -34,6 +74,14 @@ header{
     margin-bottom: 10px;
 }
 
+.btn-primary{
+    background-color: #2596be;
+    border-color: #2596be;
+}
+
+.btn-primary:hover{
+    background-color: #107294;
+}
 .error-message{
     color:red;
     margin-right: 10px;
@@ -62,7 +110,13 @@ header{
 
 
 .size-logo{
-    width: 50px;
+    width: 75px;
+}
+
+.info-web{
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .buttons-main{
@@ -71,6 +125,31 @@ header{
     gap: 10px;
     margin-top: 10px;
 }
+
+.sort-btn{
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sort-div{
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+
+.filter-div{
+margin-left: 10px;
+}
+
+.btn-categories{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
 
 table {
     width: 100%;
@@ -82,7 +161,7 @@ table {
 
 th, td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 20px;
 }
 
 tr:nth-child(even) {
@@ -92,7 +171,7 @@ tr:nth-child(even) {
 th {
     background-color: #007bff;
     color: white;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     padding: 15px;
 }

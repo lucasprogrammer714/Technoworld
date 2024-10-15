@@ -19,45 +19,69 @@
       },
       {
         "codigo": "FF35",
-        "nombre": "Samsung Galaxy A52",
-        "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de <strong>Galaxy A52</strong>. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
-        "Proveedor": "SAMSUNG",
+        "nombre": "Motorola E 14",
+        "detalle": "Disfrutá de tus películas y programas favoritos en la pantalla ultra wide y brillante de 6.6 y 90 Hz* con sonido Dolby Atmos®. Hacé varias tareas con facilidad gracias a que contás con hasta 4GB de memoria RAM con RAM Boost.",
+        "Proveedor": "MOTOROLA",
         "Identificador": "SP",
-        "RutaImagen":"../assets/img/smartphones/samsung-a52.jpg"
+        "RutaImagen":"../assets/img/smartphones/motorola-e-14.jpg"
       },
       {
         "codigo": "FF36",
-        "nombre": "Motorola Razr 50 Ultra",
-        "detalle": "Descubre la elegancia en cada pliegue con el <strong>Motorola Razr 50 Ultra</strong>. Su pantalla flexible y diseño compacto lo hacen el dispositivo perfecto para quienes buscan estilo y funcionalidad en un solo lugar.",
-        "Proveedor": "MOTOROLA",
+        "nombre": "Samsung Galaxy S24+",
+        "detalle": "Son las mejoras que estabas esperando. Más pantalla. Más batería. Más potencia de procesamiento.8 Hay mucho más que adorar de los <strong>Galaxy S24</strong> y <strong>S24+</strong>.  Especialmente ahora que el Galaxy S24+ viene con la mayor resolución de pantalla.",
+        "Proveedor": "SAMSUNG",
         "Identificador": "SP",
-        "RutaImagen":"../assets/img/smartphones/moto-razer-50.jpg"
+        "RutaImagen":"../assets/img/smartphones/samsung-s24.png"
         
       },
       {
         "codigo": "FF35",
-        "nombre": "Samsung Galaxy A52",
-        "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de <strong>Galaxy A52</strong>. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
+        "nombre": "Samsung Galaxy Z Flip5",
+        "detalle": "El <strong>Galaxy Z Flip5</strong> presenta por primera vez a Flex Window de 3,4 pulgadas creado para la autoexpresión.6 Compacto y atrapante desde todos los ángulos, este plegable es tan versátil como portátil.",
         "Proveedor": "SAMSUNG",
         "Identificador": "SP",
-        "RutaImagen":"../assets/img/smartphones/samsung-a52.jpg"
+        "RutaImagen":"../assets/img/smartphones/samsung-z-flip.jpg"
       },
       {
         "codigo": "FF36",
-        "nombre": "Motorola Razr 50 Ultra",
-        "detalle": "Descubre la elegancia en cada pliegue con el <strong>Motorola Razr 50 Ultra</strong>. Su pantalla flexible y diseño compacto lo hacen el dispositivo perfecto para quienes buscan estilo y funcionalidad en un solo lugar.",
+        "nombre": "Xiaomi Note 11",
+        "detalle": "Fotografía profesional en tu bolsilloDescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         "Proveedor": "MOTOROLA",
         "Identificador": "SP",
-        "RutaImagen":"../assets/img/smartphones/moto-razer-50.jpg"
+        "RutaImagen":"../assets/img/smartphones/xiaomi-note-11.png"
         
       },
       {
         "codigo": "GG45",
-        "nombre": "XBOX",
-        "detalle": "Contemple las cómodas y elegantes curvas del impecable diseño de Galaxy A52. En la parte trasera, la cámaras se mezclan con un acabado mate, dándole una apariencia icónica y uniforme. Exprésese con su gama completa de colores.",
+        "nombre": "XBOX Series S",
+        "detalle": "Pásate a lo digital con la Xbox Series S y crea una biblioteca de juegos digitales. Tus juegos, partidas guardadas y copias de seguridad están a salvo en la nube. Además, disfruta de la capacidad de reservar y preinstalar los juegos próximos.",
         "Proveedor": "MOTOROLA",
         "Identificador": "GM",
         "RutaImagen":"../assets/img/gaming/x-series-s.jpg"
+      },
+      {
+        "codigo": "GG45",
+        "nombre": "Playstation 5",
+        "detalle": " Disfruta de tiempos de carga superveloces con un SSD de velocidad ultrarrápida, una experiencia más inmersiva gracias a la compatibilidad con respuesta háptica1, y de toda una increíble colección de juegos.",
+        "Proveedor": "MOTOROLA",
+        "Identificador": "GM",
+        "RutaImagen":"../assets/img/gaming/ps5.jpg"
+      },
+      {
+        "codigo": "GG45",
+        "nombre": "XBOX Series S (Black)",
+        "detalle": "Disfruta de una velocidad y rendimiento de nueva generación con Xbox Series S en negro carbón, con un SSD de 1 TB. Mundos más dinámicos, tiempos de carga más rápidos y la adición de Xbox Game Pass, Series S totalmente digital ofrece gran rendimiento",
+        "Proveedor": "MOTOROLA",
+        "Identificador": "GM",
+        "RutaImagen":"../assets/img/gaming/series-s-1tb.jpg"
+      },
+      {
+        "codigo": "GG45",
+        "nombre": "XBOX Series X",
+        "detalle": "Aprovecha al máximo cada minuto de tus juegos con Quick Resume, tiempos de carga ultrarrápidos y una jugabilidad de hasta 120 FPS... todo ello con la tecnología Xbox Velocity Architecture.",
+        "Proveedor": "MOTOROLA",
+        "Identificador": "GM",
+        "RutaImagen":"../assets/img/gaming/series-x.jpg"
       }
     ]
   }

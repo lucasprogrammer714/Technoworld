@@ -207,8 +207,8 @@ function loadTable(sortBy, ascending) {
         <td>${formattedPrice}</td>
         <td>${product.code}</td>
         <td>${product.category}</td>
-        <td><button class="btn-delete btn btn-primary">Eliminar</button></td>
-        <td><button type="button" class="btn-update btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalStock">Actualizar</button></td>
+      <td><button class="btn-delete btn btn-primary"><i class="fas fa-trash"></i></button></td>
+        <td><button type="button" class="btn-update btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalStock"><i class="fas fa-pencil"></i></button></td>
       </tr>
     `;
 
